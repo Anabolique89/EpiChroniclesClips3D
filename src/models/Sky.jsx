@@ -6,7 +6,7 @@ import skyScene from "../assets/3D/sky_draco.glb";
 
 // 3D Model from: https://sketchfab.com/3d-models/phoenix-bird-844ba0cf144a413ea92c779f18912042
 export function Sky({ isRotating }) {
-  const sky = useGLTF(skyScene);
+  const sky = useGLTF(skyScene, true, '/draco/');
   const skyRef = useRef();
 
  

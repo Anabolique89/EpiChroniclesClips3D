@@ -1,25 +1,3 @@
-// import { useRef } from 'react';
-// import { useGLTF } from '@react-three/drei';
-// import { a } from '@react-spring/three';
-// import boatScene from "../assets/3D/gislinge_viking_boat_draco.glb"; 
-
-// const Boat = ({ ...props }) => {
-//   const { nodes, materials } = useGLTF(boatScene);
-//   const boatRef = useRef();
-
-//   return (
-//     <a.group ref={boatRef} {...props} rotation={[0, Math.PI, 0]}>
-//       <a.group scale={0.35}>
-//         <mesh geometry={nodes.cloth_Cloth_0.geometry} material={materials.Cloth} />
-//         <mesh geometry={nodes.rope_Rope_0.geometry} material={materials.Rope} />
-//         <mesh geometry={nodes.rope_Rope_0_1.geometry} material={materials.Rope} />
-//         <mesh geometry={nodes.rope_Rope_0_2.geometry} material={materials.Rope} />
-//         <mesh geometry={nodes.wood_wood3_0.geometry} material={materials.wood3} />
-//       </a.group>
-//     </a.group>
-//   );
-// }
-
 
 import { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
@@ -27,7 +5,7 @@ import { a } from '@react-spring/three';
 import boatScene from "../assets/3D/gislinge_viking_boat_draco.glb"; 
 
  const Boat = ({ ...props }) => {
-  const { nodes, materials } = useGLTF(boatScene)
+  const { nodes, materials } = useGLTF(boatScene, true, '/draco/')
   const boatRef = useRef();
   return (
     <a.group ref={boatRef} {...props} rotation={[0, Math.PI/2, 0]}>
@@ -159,5 +137,6 @@ import boatScene from "../assets/3D/gislinge_viking_boat_draco.glb";
     </a.group>
   )
 }
-
+useGLTF.preload('/assets/3D/gislinge_viking_boat_draco.glb');
 export default Boat;
+

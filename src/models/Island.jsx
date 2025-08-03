@@ -8,7 +8,7 @@ const Island = ({isRotating, setIsRotating, setCurrentStage, currentFocusPoint, 
 
     const islandRef = useRef();
     const { gl, viewport} = useThree();
-     const { nodes, materials } = useGLTF(islandScene);
+     const { nodes, materials } = useGLTF(islandScene, true, '/draco/');
     const lastX = useRef(0);
     const rotationSpeed = useRef(0);
     const dampingFactor = 0.95;
@@ -161,8 +161,6 @@ switch (true) {
 
     }, [gl, handlePointerDown, handlePointerUp, handlePointerMove])
 
- 
-  // const { nodes, materials } = useGLTF('../assets/3D/tiny_house_render_test_lit.glb')
   return (
     <a.group ref={islandRef} {...props} >
       <a.group scale={0.002}>
@@ -250,12 +248,7 @@ switch (true) {
               geometry={nodes['Base_15_-_Default_0'].geometry}
               material={materials['15_-_Default']}
             />
-            {/* chimney smoke  */}
-            <mesh
-            
-              geometry={nodes.Base_Souche_0.geometry}
-              material={materials.Souche}
-            />
+          
            <mesh
              
               geometry={nodes.Base_citrou_0.geometry}
@@ -279,5 +272,6 @@ switch (true) {
   )
 }
 
-// useGLTF.preload('../assets/3D/tiny_house_render_test_lit.glb')
+
+useGLTF.preload('/assets/3D/tiny_house_render_test_lit_draco.glb');
 export default Island;

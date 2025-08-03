@@ -1,13 +1,20 @@
-import { Html } from "@react-three/drei";
+import { Html, useProgress } from '@react-three/drei';
 
-const Loader = () => {
+export default function LoadingScreen() {
+  const { progress } = useProgress();
   return (
-    <Html>
-      <div className='flex justify-center items-center'>
-        <div className='w-20 h-20 border-2 border-opacity-20 border-blue-500 border-t-blue-500 rounded-full animate-spin'></div>
+    <Html center>
+      <div style={{
+        color: 'white',
+        fontSize: '1.5em',
+        textAlign: 'center',
+        background: 'rgba(0,0,0,0.5)',
+        padding: '20px',
+        borderRadius: '10px',
+        fontFamily: 'sans-serif'
+      }}>
+        Loading... {progress.toFixed(0)}%
       </div>
     </Html>
   );
-};
-
-export default Loader;
+}

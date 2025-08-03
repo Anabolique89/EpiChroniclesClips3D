@@ -49,5 +49,5 @@ const Water = (props)=>{
   )
 }
 
-// useGLTF.preload('/water_wave_for_ar.glb')
+useGLTF.preload('/water_wave_for_ar.glb');
 export default Water;

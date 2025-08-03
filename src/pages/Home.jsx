@@ -8,7 +8,6 @@ import Boat from '../models/Boat';
 import { Bird } from '../models/Bird';
 import HomeInfo from '../components/HomeInfo';
 import { OrbitControls } from '@react-three/drei';
-// import { logo } from '../assets/images';
 import sakura from '../assets/sakura.mp3';
 import { soundoff, soundon } from '../assets/icons';
 
@@ -20,6 +19,13 @@ const Home = () => {
   const [isRotating, setIsRotating] = useState();
   const [currentStage, setCurrentStage] = useState(1);
 const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+
+const [showBird, setShowBird] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowBird(true), 2000); // Bird loads 2s later
+    return () => clearTimeout(timer);
+  }, []);
 
 useEffect(() =>{
   if(isPlayingMusic){
@@ -88,8 +94,11 @@ const [boatScale, boatPosition, boatRotation] = adjustBoatForScreenSize();
 
 <Sky isRotating={isRotating} />
 
-<Bird
-  />
+  {showBird && (
+        <Suspense fallback={null}>
+          <Bird/>
+        </Suspense>
+      )}
 
 <Island 
 position = {islandPosition}
@@ -100,7 +109,7 @@ setIsRotating={setIsRotating}
 setCurrentStage={setCurrentStage}
 
  />
- {/* <OrbitControls /> */}
+ <OrbitControls />
 <Water 
 position = {islandPosition}
 scale = {islandScale}
