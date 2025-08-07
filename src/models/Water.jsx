@@ -1,13 +1,13 @@
 
 import { useRef, useEffect } from 'react';
 import {useFrame, useThree} from '@react-three/fiber';
-import waterScene from "../assets/3D/water_wave_for_ar.glb"; 
+import waterScene from "../assets/3D/water_wave_for_ar_draco.glb"; 
 import { a } from '@react-spring/three';
 import { useGLTF, useAnimations } from '@react-three/drei'
 
 const Water = (props)=>{
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF(waterScene)
+  const { nodes, materials, animations } = useGLTF(waterScene, true, '/draco/')
   const { actions } = useAnimations(animations, group)
   return (
     <a.group  ref={group} {...props}>

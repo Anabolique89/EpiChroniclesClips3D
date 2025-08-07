@@ -67,7 +67,7 @@ const [loading, setLoading] = useState(false);
         },
         (error) => {
           setIsLoading(false);
-          setCurrentAnimation("idle");
+          // setCurrentAnimation("idle");
           console.error(error);
 
           showAlert({

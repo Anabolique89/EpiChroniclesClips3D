@@ -8,14 +8,10 @@ import Boat from '../models/Boat';
 import { Bird } from '../models/Bird';
 import HomeInfo from '../components/HomeInfo';
 import { OrbitControls } from '@react-three/drei';
-import sakura from '../assets/sakura.mp3';
-import { soundoff, soundon } from '../assets/icons';
+
 
 
 const Home = () => {
-  const audioRef = useRef(new Audio(sakura));
-  audioRef.current.volume = 0.2;
-  audioRef.current.loop = true;
   const [isRotating, setIsRotating] = useState();
   const [currentStage, setCurrentStage] = useState(1);
 const [isPlayingMusic, setIsPlayingMusic] = useState(false);
@@ -26,16 +22,6 @@ const [showBird, setShowBird] = useState(false);
     const timer = setTimeout(() => setShowBird(true), 2000); // Bird loads 2s later
     return () => clearTimeout(timer);
   }, []);
-
-useEffect(() =>{
-  if(isPlayingMusic){
-    audioRef.current.play();
-  }
-
-  return() => {
-    audioRef.current.pause();
-  }
-},[isPlayingMusic])
 
    const adjustIslandForScreenSize = () =>{
     let screenScale = null;
@@ -88,8 +74,7 @@ const [boatScale, boatPosition, boatRotation] = adjustBoatForScreenSize();
 
 <directionalLight  position={[1,1,1]} intensity={2}/>
 <ambientLight intensity={0.5}/>
-{/* <pointLight /> */}
-{/* <spotLight /> */}
+
 <hemisphereLight skyColor="#b1e1ff" groundColor="#000000" intensity={1}/> 
 
 <Sky isRotating={isRotating} />
@@ -109,7 +94,7 @@ setIsRotating={setIsRotating}
 setCurrentStage={setCurrentStage}
 
  />
- <OrbitControls />
+ {/* <OrbitControls /> */}
 <Water 
 position = {islandPosition}
 scale = {islandScale}
@@ -123,14 +108,7 @@ rotation={[0,20,0]}/>
 </Suspense>
 
 </Canvas>
- <div className='absolute bottom-2 left-2'>
-        <img
-          src={!isPlayingMusic ? soundoff : soundon}
-          alt='jukebox'
-          onClick={() => setIsPlayingMusic(!isPlayingMusic)}
-          className='w-10 h-10 cursor-pointer object-contain'
-        />
-      </div>
+ 
    </section>
   )
 }

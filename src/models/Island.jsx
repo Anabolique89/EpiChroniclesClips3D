@@ -176,16 +176,7 @@ switch (true) {
               geometry={nodes.Base_devant_0.geometry}
               material={materials.devant}
             />
-            <mesh
-            
-              geometry={nodes.Base_P4_0.geometry}
-              material={materials.material}
-            />
-            <mesh
-             
-              geometry={nodes.Base_chatp_copy_0.geometry}
-              material={materials.chatp_copy}
-            />
+         
             <mesh
               
               geometry={nodes.Base_Charp_0.geometry}
