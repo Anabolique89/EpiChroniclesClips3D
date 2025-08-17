@@ -8,7 +8,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 const Water = (props)=>{
   const group = useRef()
   const { nodes, materials, animations } = useGLTF(waterScene, true, '/draco/')
-  const { actions } = useAnimations(animations, group)
+  const { actions } = useAnimations(animations, a.group)
   return (
     <a.group  ref={group} {...props}>
       <a.group name="Sketchfab_Scene">
@@ -24,7 +24,7 @@ const Water = (props)=>{
                         position={[365.286, -.732, -213.008]}
                         rotation={[0, 0.146, 0]}>
                         <a.group name="Object_14_2">
-                          <a.group name="MorphMainGroup_1">
+                          <a.group name="MorphMaina.group_1">
                             <a.group name="PlaneShape_0">
                               <mesh
                                 name="mesh_0"

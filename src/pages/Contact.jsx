@@ -154,7 +154,7 @@ camera={{ position: [0, 2, 10], fov: 45 }}>
   <directionalLight 
   position={[10, 10, 5]} 
   intensity={1.5} 
-  castShadow />
+   />
    <hemisphereLight
     skyColor={'#ffffff'}
     groundColor={'#444444'}

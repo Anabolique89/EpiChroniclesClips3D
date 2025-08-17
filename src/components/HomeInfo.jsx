@@ -6,7 +6,7 @@ const HomeInfo = ({ currentStage }) => {
       <h1 className='sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-2 px-6 text-white mx-5'>
        Welcome viking fans! We are
         <span className='font-semibold mx-2 text-white'><br/> Epic Chronicles Clips 👋<br/> </span>
-       A group of history lovers from England
+       A a.group of history lovers from England
       </h1>
     );
 
@@ -94,7 +94,7 @@ export default HomeInfo;
 // <h1 className='sm:text-l sm:leading-snug text-center 
 // neo-brutalism-blue py-2 px-6 text-white mx-5'>Welcome viking fans! We are 
 // <span className='font-semibold'><br/> Epic Chronicles Clips <br/></span>
-// A group of history lovers from England</h1>
+// A a.group of history lovers from England</h1>
 //     ),
 //     2: (
 // <InfoBox 
