@@ -6,7 +6,7 @@ const HomeInfo = ({ currentStage }) => {
       <h1 className='sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-2 px-6 text-white mx-5'>
        Welcome viking fans! We are
         <span className='font-semibold mx-2 text-white'><br/> Epic Chronicles Clips 👋<br/> </span>
-       A a.group of history lovers from England
+       A group of history lovers from England
       </h1>
     );
 
@@ -55,20 +55,7 @@ const HomeInfo = ({ currentStage }) => {
     );
   }
 
-  //  if (currentStage === 5) {
-  //   return (
-  //     <div className='sm:text-l sm:leading-snug text-center neo-brutalism-blue py-2 px-6 text-white mx-5'>
-  //     <h1 className='font-small sm:text-l text-center p-2'>
-  //       Just enjoy the view <br/> and let's play a game!
-  //     </h1>
-
-  //     <Link to='/contact' className='neo-brutalism-white neo-btn text-blue-800 font-bold p-1 mb-2'>
-  //       Wanna test your knowledge on vikings?
-  //       <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
-  //     </Link>
-  //   </div>
-  //   );
-  // }
+  
 
   return null;
 };

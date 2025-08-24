@@ -1,10 +1,22 @@
 @import "tailwindcss";
 @tailwind utilities;
 
+
+* {
+box-sizing: border-box;
+}
+
+html, body {
+margin: 0;
+padding: 0;
+width: 100%;
+overflow-x: hidden;
+}
 :root {
   --blue-rgb: 237 245 255;
   --green-rgb: 125 161 35;
 }
+
 
 body {
   font-family: "Work Sans", sans-serif;
@@ -120,3 +132,187 @@ body:has(.card[data-color="green"]:hover) {
     0.65vmin 1vmin #d2e4ff, 1vmin 0.65vmin #d2e4ff;
 }
 
+/* Add this to your main CSS file or index.css */
+
+/* CRITICAL: Mobile viewport and base styles */
+* {
+  box-sizing: border-box !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+html {
+  font-size: 16px !important;
+  -webkit-text-size-adjust: 100% !important;
+  -ms-text-size-adjust: 100% !important;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+/* FORCE MOBILE STYLES - Override Tailwind */
+@media screen and (max-width: 768px) {
+  
+  /* Force larger text on mobile */
+  .mobile-text,
+  .text-xs,
+  .text-sm {
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Force proper button sizes */
+  button,
+  .mobile-button,
+  [role="button"] {
+    min-height: 56px !important;
+    min-width: 56px !important;
+    font-size: 1rem !important;
+    padding: 1rem !important;
+    touch-action: manipulation !important;
+  }
+  
+  /* Force mobile controls to show */
+  .force-mobile-show {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .force-desktop-hidden {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  /* Force popup sizes */
+  .mobile-popup {
+    width: 95vw !important;
+    max-width: 95vw !important;
+    max-height: 85vh !important;
+    font-size: 1rem !important;
+  }
+  
+  .mobile-popup h1 {
+    font-size: 1.5rem !important;
+  }
+  
+  .mobile-popup h2 {
+    font-size: 1.3rem !important;
+  }
+  
+  .mobile-popup p {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Force mobile grid layout */
+  .mobile-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  /* Force proper mobile navigation */
+  .mobile-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    background: white !important;
+    position: fixed !important;
+    top: 80px !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 999 !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
+  }
+  
+  .mobile-nav a {
+    padding: 1.5rem 2rem !important;
+    font-size: 1.2rem !important;
+    border-bottom: 1px solid #e5e7eb !important;
+  }
+  
+  /* Force floating button visibility */
+  .floating-shop-button {
+    position: fixed !important;
+    bottom: 100px !important;
+    right: 20px !important;
+    z-index: 100 !important;
+    background: #dc2626 !important;
+    color: white !important;
+    padding: 1rem 1.5rem !important;
+    border-radius: 50px !important;
+    font-size: 1.1rem !important;
+    font-weight: bold !important;
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.5) !important;
+    animation: bounce-slow 3s infinite !important;
+  }
+}
+
+/* Extra small mobile devices */
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 14px !important;
+  }
+  
+  .mobile-text,
+  .text-xs,
+  .text-sm {
+    font-size: 0.9rem !important;
+  }
+  
+  button,
+  .mobile-button {
+    min-height: 50px !important;
+    padding: 0.8rem !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .mobile-popup {
+    width: 98vw !important;
+    max-height: 90vh !important;
+    padding: 1rem !important;
+  }
+}
+
+/* Landscape mobile */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .mobile-popup {
+    max-height: 75vh !important;
+    overflow-y: auto !important;
+  }
+}
+
+/* Force hide desktop elements on mobile */
+@media screen and (max-width: 768px) {
+  .hidden.sm\\:block,
+  .sm\\:hidden,
+  .md\\:flex,
+  .force-desktop-show {
+    display: none !important;
+  }
+}
+
+/* Animation keyframes */
+@keyframes bounce-slow {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+
+@media (max-width: 768px) {
+  .mobile-text { font-size: clamp(0.75rem, 3vw, 1rem); }
+  .mobile-button { min-height: 44px; min-width: 44px; }
+}
+
+@keyframes bounce-slow {
+  0%,20%,50%,80%,100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+.animate-bounce-slow { animation: bounce-slow 3s infinite; }

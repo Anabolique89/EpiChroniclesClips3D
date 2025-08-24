@@ -608,44 +608,7 @@ const Island2 = ({ isRotating, setIsRotating, setCurrentStage, currentFocusPoint
           rotation={[0.11, -1.203, 0.194]}
         />
       </a.group>
-      <a.group position={[29.339, 16.048, -89.902]} rotation={[0, -0.086, 0]}>
-        <mesh
-          
-          
-          geometry={nodes.Object_196.geometry}
-          material={materials['Material.004']}
-        />
-        <a.group position={[0.313, 38.688, 0.128]} rotation={[0.084, 0.653, -0.085]}>
-          <mesh
-            
-            
-            geometry={nodes.Object_198.geometry}
-            material={materials['Material.004']}
-          />
-          <mesh
-            
-            
-            geometry={nodes.Object_199.geometry}
-            material={materials.emission}
-          />
-        </a.group>
-        <mesh
-          
-          
-          geometry={nodes.Object_201.geometry}
-          material={materials['Material.004']}
-          position={[1.522, 32.199, 4.473]}
-          rotation={[0.092, -0.987, 1.592]}
-        />
-        <mesh
-          
-          
-          geometry={nodes.Object_203.geometry}
-          material={materials.emission}
-          position={[0.188, 12.681, 0.216]}
-          rotation={[0, 0.638, 0]}
-        />
-      </a.group>
+      
       <a.group position={[-14.879, -3.715, 61.952]}>
         <mesh
           
@@ -738,32 +701,7 @@ const Island2 = ({ isRotating, setIsRotating, setCurrentStage, currentFocusPoint
           material={materials['leaves.001']}
         />
       </a.group>
-      <a.group position={[11.83, 56.32, -3.564]} rotation={[-0.694, 0.692, 0.365]}>
-        <mesh
-          
-          
-          geometry={nodes.Object_593.geometry}
-          material={materials.flower}
-        />
-        <mesh
-          
-          
-          geometry={nodes.Object_594.geometry}
-          material={materials['Material.001']}
-        />
-        <mesh
-          
-          
-          geometry={nodes.Object_595.geometry}
-          material={materials['leaves.002']}
-        />
-        <mesh
-          
-          
-          geometry={nodes.Object_596.geometry}
-          material={materials['leaves.001']}
-        />
-      </a.group>
+   
       <a.group position={[-12.948, 41.929, -9.037]} rotation={[-0.386, 0.5, 0.482]}>
         <mesh
           
@@ -777,12 +715,7 @@ const Island2 = ({ isRotating, setIsRotating, setCurrentStage, currentFocusPoint
           geometry={nodes.Object_599.geometry}
           material={materials['Material.001']}
         />
-        <mesh
-          
-          
-          geometry={nodes.Object_600.geometry}
-          material={materials['leaves.002']}
-        />
+     
         <mesh
           
           
@@ -842,22 +775,8 @@ const Island2 = ({ isRotating, setIsRotating, setCurrentStage, currentFocusPoint
           material={materials['leaves.001']}
         />
       </a.group>
-      <mesh
-        
-        
-        geometry={nodes.Object_4.geometry}
-        material={materials['rocks.003']}
-        position={[-48.606, 6.45, 13.052]}
-        rotation={[-3.138, -0.513, 3.11]}
-      />
-      <mesh
-        
-        
-        geometry={nodes.Object_36.geometry}
-        material={materials['rocks.001']}
-        position={[-54.103, 5.256, -5.999]}
-        rotation={[-0.141, 0.541, 0.079]}
-      />
+     
+    
       <mesh
         
         
@@ -866,33 +785,8 @@ const Island2 = ({ isRotating, setIsRotating, setCurrentStage, currentFocusPoint
         position={[-52.458, 5.563, -6.101]}
         rotation={[0.201, -1.008, 0.162]}
       />
+      
       <mesh
-        
-        
-        geometry={nodes.Object_55.geometry}
-        material={materials.pillar}
-        position={[-53.29, 5.396, -4.73]}
-        rotation={[-0.091, 0.537, 0.174]}
-      />
-      <mesh
-        
-        
-        geometry={nodes.Object_57.geometry}
-        material={materials.pillar}
-        position={[-53.21, 5.427, -7.37]}
-        rotation={[-0.047, 0.515, 0.184]}
-      />
-      <mesh
-        
-        
-        geometry={nodes.Object_59.geometry}
-        material={materials.pillar}
-        position={[-51.473, 5.423, 7.256]}
-        rotation={[-0.078, 0.547, -0.073]}
-     
-      />
-      <mesh
-        
         
         geometry={nodes.Object_61.geometry}
         material={materials['rocks.001']}
@@ -2747,5 +2641,3 @@ const Island2 = ({ isRotating, setIsRotating, setCurrentStage, currentFocusPoint
 useGLTF.preload('/fantasy_island.glb')
 
 export default Island2;
-
-
