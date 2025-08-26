@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const HomeInfo = ({ currentStage }) => {
   if (currentStage === 1)
     return (
-      <h1 className='sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-2 px-6 text-white mx-5'>
+      <h1 className='sm:text-4xl sm:leading-snug text-center neo-brutalism-blue py-2 px-6 text-white mx-5'>
        Welcome viking fans! We are
         <span className='font-semibold mx-2 text-white'><br/> Epic Chronicles Clips 👋<br/> </span>
        A group of history lovers from England
@@ -12,12 +12,12 @@ const HomeInfo = ({ currentStage }) => {
 
   if (currentStage === 2) {
     return (
-      <div className=' sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-2 px-6 text-white mx-5'>
-        <h1 className=' font-medium sm:text-l text-center m-2'>
+      <div className=' sm:text-4xl sm:leading-snug text-center neo-brutalism-blue py-2 px-6 text-white mx-5'>
+        <h1 className=' font-medium sm:text-l text-center m-2 mb-4'>
           We create historical videos and short <br /> edits filled with commentary about
         </h1>
 
-        <Link to='/about' className='neo-brutalism-white neo-btn rounded-md text-blue-800 font-bold  mb-2 sm:text-l text-center p-2 ' >
+        <Link to='/about' className='neo-brutalism-white neo-btn rounded-md text-blue-800 font-bold  mb-2 sm:text-l text-center p-2 sm:p-4' >
           medieval history myths and facts.
        
         </Link>
@@ -27,12 +27,12 @@ const HomeInfo = ({ currentStage }) => {
 
   if (currentStage === 3) {
     return (
-      <div className='sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-2 px-2 text-white mx-4'>
-        <h1 className='font-medium text-center sm:text-l p-2'>
-        Find all things about viking history, documentaries, <br />  merch, subscriptions and much more!
+      <div className='sm:text-4xl sm:leading-snug text-center neo-brutalism-blue py-2 px-2 text-white mx-4'>
+        <h1 className='font-medium text-center sm:text-l p-2 mb-4'>
+        Find all things about viking history, documentaries, merch,<br/> subscriptions and much more!
         </h1>
 
-        <Link to='/shop' className='neo-brutalism-white neo-btn rounded-md text-blue-800 font-bold p-1 mb-2'>
+        <Link to='/shop' className='neo-brutalism-white neo-btn rounded-md text-blue-800 font-bold p-1 mb-2 sm:p-4'>
           Shop your favourite merch.
           {/* <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' /> */}
         </Link>
@@ -42,12 +42,12 @@ const HomeInfo = ({ currentStage }) => {
 
   if (currentStage === 4) {
     return (
-      <div className='sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-2 px-6 text-white mx-5'>
-      <h1 className='font-medium sm:text-l text-center p-2'>
+      <div className='sm:text-4xl sm:leading-snug text-center neo-brutalism-blue py-2 px-6 text-white mx-5'>
+      <h1 className='font-medium sm:text-l text-center p-2 mb-4'>
         We are just a few keystrokes away <br/> so reach out and
       </h1>
 
-      <Link to='/contact' className='neo-brutalism-white neo-btn rounded-md text-blue-800 font-bold p-1 mb-2'>
+      <Link to='/contact' className='neo-brutalism-white neo-btn rounded-md text-blue-800 font-bold p-1 mb-2 sm:p-4'>
         Ask us anything!
         {/* <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' /> */}
       </Link>

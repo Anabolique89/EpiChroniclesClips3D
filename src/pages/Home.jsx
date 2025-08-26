@@ -94,35 +94,35 @@ const IslandPopup = ({ show, onClose }) => {
       style={{ zIndex: 9999 }}
     >
       <div 
-        className="bg-gradient-to-br from-emerald-900 via-teal-800 to-green-900 p-4 sm:p-8 rounded-3xl w-full max-w-sm sm:max-w-2xl relative shadow-2xl border-4 border-emerald-400 transform transition-all duration-300"
+        className="bg-gradient-to-br from-emerald-900 via-teal-800 to-green-900 p-4 sm:p-8 rounded-3xl w-full max-w-sm sm:max-w-4xl relative shadow-2xl border-4 border-emerald-400 transform transition-all duration-300 "
         onClick={(e) => e.stopPropagation()}
       >
         {/* Floating magical elements */}
-        <div className="absolute -top-6 -left-6 text-5xl animate-bounce">🌟</div>
-        <div className="absolute -top-4 -right-4 text-4xl animate-pulse">🔮</div>
-        <div className="absolute bottom-4 left-2 text-3xl animate-bounce delay-500">✨</div>
+        <div className="absolute -top-6 -left-6 text-6xl animate-bounce">🌟</div>
+        <div className="absolute -top-4 -right-4 text-6xl animate-pulse">🔮</div>
+        <div className="absolute bottom-4 left-2 text-6xl animate-bounce delay-500">✨</div>
         
         <button 
           onClick={onClose}
-          className="absolute top-3 right-3 text-emerald-200 hover:text-emerald-100 text-3xl font-bold w-10 h-10 flex items-center justify-center rounded-full hover:bg-emerald-700 hover:bg-opacity-50 transition-all transform hover:scale-110"
+          className="absolute top-3 right-3 text-emerald-200 hover:text-emerald-100 text-3xl sm:text-5xl font-bold w-10 h-10 flex items-center justify-center rounded-full hover:bg-emerald-700 hover:bg-opacity-50 transition-all transform hover:scale-110"
         >
           ×
         </button>
         
         <div className="text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-emerald-100 flex items-center justify-center">
-            <span className="mr-3 text-4xl animate-pulse">🏝️</span>
+          <h2 className="text-2xl sm:text-6xl font-bold mb-4 text-emerald-100 flex items-center justify-center p-2 ">
+            <span className="mr-3 text-5xl animate-pulse">🏝️</span>
             The Island Merchants
-            <span className="ml-3 text-4xl animate-pulse">⚖️</span>
+            <span className="ml-3 text-5xl animate-pulse">⚖️</span>
           </h2>
           
           <div className="bg-emerald-800 bg-opacity-60 p-4 sm:p-6 rounded-xl mb-6 border-2 border-emerald-400 backdrop-blur-sm">
-            <h3 className="text-lg sm:text-xl font-bold mb-4 text-emerald-200 flex items-center justify-center gap-2">
-              <span className="text-2xl">👑</span>
+            <h3 className="text-lg sm:text-4xl font-bold mb-4 text-emerald-200 flex items-center justify-center gap-2 p-2">
+              <span className="text-4xl">👑</span>
               Astrid the Truthseer Speaks
             </h3>
             
-            <div className="text-emerald-100 text-sm sm:text-base leading-relaxed space-y-4">
+            <div className="text-emerald-100 text-sm sm:text-3xl leading-relaxed space-y-4">
               <p className="italic">
                 "For centuries, we Island Merchants have dwelled in this mystical realm, suspended between the mortal world and the realm of magic. We are the guardians of ancient treasures, keepers of enchanted wares that hold power beyond mortal understanding."
               </p>
@@ -137,15 +137,15 @@ const IslandPopup = ({ show, onClose }) => {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-amber-800 to-orange-800 p-4 rounded-lg mb-6 border border-amber-400">
-            <p className="text-amber-100 text-sm sm:text-base font-semibold">
-              <span className="text-xl mr-2">⚡</span>
+          <div className="bg-gradient-to-r from-amber-800 to-orange-800 p-4 sm:p-8 rounded-lg mb-6 border border-amber-400">
+            <p className="text-amber-100 text-sm sm:text-4xl font-semibold">
+              <span className="text-xl sm:text-4xl mr-2">⚡</span>
               "The trading hall remains open, brave soul. Will you discover what magical wares await your worthy hands?"
-              <span className="text-xl ml-2">⚡</span>
+              <span className="text-xl sm:text-4xl ml-2">⚡</span>
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center p-4">
             <a 
               href="https://10zpwk-n0.myshopify.com/" 
               target="_blank" 
@@ -153,15 +153,15 @@ const IslandPopup = ({ show, onClose }) => {
               className="bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 hover:from-amber-500 hover:via-orange-500 hover:to-red-500 text-white px-6 sm:px-8 py-4 rounded-xl transition-all font-bold text-base sm:text-lg transform hover:scale-105 active:scale-95 text-center shadow-lg border-2 border-yellow-400 relative overflow-hidden group"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400 opacity-0 group-hover:opacity-20 transition-opacity"></span>
-              <span className="relative flex items-center justify-center gap-2">
-                <span className="text-xl">🏛️</span>
+              <span className="relative flex items-center justify-center gap-2 sm:text-4xl">
+                <span className="text-xl sm:text-4xl">🏛️</span>
                 Enter the Trading Hall
-                <span className="text-xl">💰</span>
+                <span className="text-xl sm:text-4xl">💰</span>
               </span>
             </a>
             <button 
               onClick={onClose}
-              className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 text-white px-6 py-4 rounded-xl transition-all font-semibold transform hover:scale-105 active:scale-95"
+              className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 text-white px-6 py-4 rounded-xl transition-all font-semibold transform hover:scale-105 active:scale-95 sm:text-4xl"
             >
               <span className="flex items-center justify-center gap-2">
                 <span>🌊</span>
@@ -171,17 +171,17 @@ const IslandPopup = ({ show, onClose }) => {
           </div>
           
           {/* Mystical elements */}
-          <div className="mt-6 flex justify-center items-center gap-6 text-emerald-300">
-            <div className="flex flex-col items-center gap-1 text-xs sm:text-sm">
-              <span className="text-2xl animate-pulse">💎</span>
+          <div className="mt-6 flex justify-center items-center gap-6 text-emerald-300 sm:text-4xl">
+            <div className="flex flex-col items-center gap-1 text-xs sm:text-xl">
+              <span className="text-2xl animate-pulse sm:text-4xl">💎</span>
               <span className="font-semibold">Enchanted Crystals</span>
             </div>
-            <div className="flex flex-col items-center gap-1 text-xs sm:text-sm">
-              <span className="text-2xl animate-pulse delay-300">🗺️</span>
+            <div className="flex flex-col items-center gap-1 text-xs sm:text-xl">
+              <span className="text-2xl animate-pulse delay-300 sm:text-4xl">🗺️</span>
               <span className="font-semibold">Treasure Maps</span>
             </div>
-            <div className="flex flex-col items-center gap-1 text-xs sm:text-sm">
-              <span className="text-2xl animate-pulse delay-500">🧪</span>
+            <div className="flex flex-col items-center gap-1 text-xs sm:text-xl">
+              <span className="text-2xl sm:text-4xl animate-pulse delay-500">🧪</span>
               <span className="font-semibold">Healing Potions</span>
             </div>
           </div>
@@ -195,10 +195,10 @@ const IslandPopup = ({ show, onClose }) => {
 const FloatingShopButton = ({ onClick }) => (
   <button
     onClick={onClick}
-    className="fixed bottom-20 right-4 z-40 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white px-4 py-3 rounded-full text-sm font-bold shadow-2xl transform hover:scale-110 active:scale-95 transition-all border-2 border-yellow-400 animate-bounce-slow sm:hidden"
+    className="fixed bottom-80 right-4 z-40 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white px-4 py-3 rounded-full text-sm sm:text-4xl font-bold shadow-2xl transform hover:scale-110 active:scale-95 transition-all border-2 border-yellow-400 animate-bounce-slow lg:hidden sm:p-6"
   >
     <span className="flex items-center gap-2">
-      <span className="text-lg">🛒</span>
+      <span className="text-lg sm:text-4xl">🛒</span>
       <span>SHOP</span>
     </span>
   </button>
@@ -321,16 +321,37 @@ const Home = () => {
     <section className='w-full h-screen relative overflow-hidden'>
       {/* Mobile-optimized viewport meta tag equivalent styling */}
       <style jsx>{`
+html, body {
+  height: 100%;
+  overflow: hidden; /* Prevent scrollbars */
+}
+
+:root {
+  --vh: 100%; /* fallback */
+}
+
+@media (max-width: 768px) {
+  :root {
+    --vh: 100vh;
+  }
+}
+
+.fullscreen {
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  overflow: hidden;
+}
+
         @media (max-width: 768px) {
           .mobile-text {
             font-size: clamp(0.75rem, 3vw, 1rem);
           }
           .mobile-button {
-            min-height: 44px;
-            min-width: 44px;
+            min-height: 66px;
+            min-width: 66px;
           }
           .mobile-padding {
-            padding: 0.75rem;
+            padding: 1rem;
           }
         }
         
@@ -403,45 +424,42 @@ const Home = () => {
       <FloatingShopButton onClick={goToShop} />
 
       {/* Enhanced Mobile Controls Panel */}
-      <div className={`absolute bottom-4 left-4 right-4 z-10 ${isMobile ? 'block' : 'hidden'}`}>
-        <div className="bg-black bg-opacity-90 backdrop-blur-sm text-white p-4 rounded-2xl border border-amber-600">
+      <div className={`absolute bottom-[15%] left-4 right-4 z-10 ${isMobile ? 'block' : 'hidden'}`}>
+        <div className="bg-black sm:p-10 bg-opacity-90 backdrop-blur-sm text-white p-4 rounded-2xl border border-amber-600">
           <div className="grid grid-cols-3 gap-3 mb-3">
             <button 
               className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white px-3 py-3 rounded-xl text-xs font-bold flex flex-col items-center justify-center gap-1 transform active:scale-95 transition-all shadow-lg mobile-button border border-yellow-400"
               onClick={goToShop}
             >
-              <span className="text-lg">🛒</span>
-              <span className="mobile-text">SHOP</span>
+              <span className="text-2xl sm:text-4xl">🛒</span>
+              <span className="sm:text-4xl">SHOP</span>
             </button>
             <button 
               className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white px-3 py-3 rounded-xl text-xs font-semibold flex flex-col items-center justify-center gap-1 transform active:scale-95 transition-all shadow-lg mobile-button"
               onClick={handleIslandClick}
             >
-              <span className="text-lg">🏝️</span>
-              <span className="mobile-text">Island</span>
+              <span className="text-lg sm:text-4xl">🏝️</span>
+              <span className="mobile-text sm:text-4xl">Island</span>
             </button>
             <button 
               className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white px-3 py-3 rounded-xl text-xs font-semibold flex flex-col items-center justify-center gap-1 transform active:scale-95 transition-all shadow-lg mobile-button"
               onClick={handleBoatClick}
             >
-              <span className="text-lg">🚢</span>
-              <span className="mobile-text">Boat</span>
+              <span className="text-lg sm:text-4xl">🚢</span>
+              <span className="mobile-text sm:text-4xl">Boat</span>
             </button>
           </div>
           <div className="text-center text-xs opacity-75">
-            <p className="mobile-text">Drag to rotate • Tap to explore • Shop for treasures!</p>
+            <p className="mobile-text sm:text-xl">Drag to rotate • Tap to explore • Shop for treasures!</p>
           </div>
         </div>
       </div>
 
       {/* Enhanced Desktop Controls */}
-      <div className={`absolute bottom-4 left-4 z-10 max-w-xs ${isMobile ? 'hidden' : 'block'}`}>
-        <div className="bg-black bg-opacity-80 text-white p-5 rounded-xl text-sm backdrop-blur-sm border border-amber-600">
-          <h3 className="font-bold mb-3 flex items-center gap-2">
-            <span>🎮</span>
-            Viking Controls
-          </h3>
-          <ul className="text-xs space-y-2 opacity-90">
+      <div className={`absolute bottom-[7%] left-4 z-10 max-w-md ${isMobile ? 'hidden' : 'block'}`}>
+        <div className="bg-black bg-opacity-80 text-white p-5 rounded-xl text-sm sm:text-xl backdrop-blur-sm border border-amber-600">
+  
+          <ul className="text-xs sm:text-2xl space-y-2 opacity-90 p-1">
             <li className="flex items-center gap-2">
               <span>🖱️</span>
               Drag to navigate the seas
@@ -463,26 +481,26 @@ const Home = () => {
       </div>
 
       {/* Enhanced Desktop Action Buttons */}
-      <div className={`absolute bottom-4 right-4 flex flex-col gap-3 ${isMobile ? 'hidden' : 'block'}`}>
+      <div className={`absolute bottom-[7%] right-4 flex flex-col gap-3 ${isMobile ? 'hidden' : 'block'}`}>
         <a
           href="https://10zpwk-n0.myshopify.com/" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white px-6 py-4 rounded-xl text-sm font-bold shadow-lg transform hover:scale-105 active:scale-95 transition-all flex items-center gap-2 border-2 border-yellow-400"
+          className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white px-6 py-4 rounded-xl text-sm font-bold shadow-lg transform hover:scale-105 active:scale-95 transition-all flex items-center gap-2 border-2 border-yellow-400 sm:text-4xl p-6"
         >
           <span>⚔️</span>
           VIKING SHOP
           <span>💰</span>
         </a>
         <button 
-          className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white px-4 py-3 rounded-xl text-sm font-semibold shadow-lg transform hover:scale-105 active:scale-95 transition-all flex items-center gap-2"
+          className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white px-4 py-3 rounded-xl text-sm font-semibold shadow-lg transform hover:scale-105 active:scale-95 transition-all flex items-center gap-2 sm:text-4xl p-6"
           onClick={handleIslandClick}
         >
           <span>🏝️</span>
           Island
         </button>
         <button 
-          className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white px-4 py-3 rounded-xl text-sm font-semibold shadow-lg transform hover:scale-105 active:scale-95 transition-all flex items-center gap-2"
+          className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white px-4 py-3 rounded-xl text-sm font-semibold shadow-lg transform hover:scale-105 active:scale-95 transition-all flex items-center gap-2 sm:text-4xl p-6"
           onClick={handleBoatClick}
         >
           <span>🚢</span>

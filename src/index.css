@@ -4,6 +4,7 @@
 
 * {
 box-sizing: border-box;
+/* display: none !important; */
 }
 
 html, body {
@@ -157,15 +158,15 @@ body {
 @media screen and (max-width: 768px) {
   
   /* Force larger text on mobile */
-  .mobile-text,
+  /* .mobile-text,
   .text-xs,
   .text-sm {
     font-size: 1rem !important;
     line-height: 1.4 !important;
-  }
+  } */
   
   /* Force proper button sizes */
-  button,
+  /* button,
   .mobile-button,
   [role="button"] {
     min-height: 56px !important;
@@ -174,9 +175,9 @@ body {
     padding: 1rem !important;
     touch-action: manipulation !important;
   }
-  
+   */
   /* Force mobile controls to show */
-  .force-mobile-show {
+  /* .force-mobile-show {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
@@ -186,10 +187,10 @@ body {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
-  }
+  }  */
   
   /* Force popup sizes */
-  .mobile-popup {
+  /* .mobile-popup {
     width: 95vw !important;
     max-width: 95vw !important;
     max-height: 85vh !important;
@@ -210,14 +211,14 @@ body {
   }
   
   /* Force mobile grid layout */
-  .mobile-grid {
+  /* .mobile-grid {
     display: grid !important;
     grid-template-columns: 1fr 1fr 1fr !important;
     gap: 1rem !important;
-  }
+  } */
   
   /* Force proper mobile navigation */
-  .mobile-nav {
+  /* .mobile-nav {
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
@@ -228,13 +229,13 @@ body {
     right: 0 !important;
     z-index: 999 !important;
     box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
-  }
+  } */
   
-  .mobile-nav a {
+  /* .mobile-nav a {
     padding: 1.5rem 2rem !important;
     font-size: 1.2rem !important;
     border-bottom: 1px solid #e5e7eb !important;
-  }
+  } */
   
   /* Force floating button visibility */
   .floating-shop-button {
@@ -254,7 +255,7 @@ body {
 }
 
 /* Extra small mobile devices */
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   html {
     font-size: 14px !important;
   }
@@ -277,25 +278,25 @@ body {
     max-height: 90vh !important;
     padding: 1rem !important;
   }
-}
+}  */
 
 /* Landscape mobile */
-@media screen and (max-width: 768px) and (orientation: landscape) {
+/* @media screen and (max-width: 768px) and (orientation: landscape) {
   .mobile-popup {
     max-height: 75vh !important;
     overflow-y: auto !important;
   }
-}
+} */
 
 /* Force hide desktop elements on mobile */
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .hidden.sm\\:block,
   .sm\\:hidden,
   .md\\:flex,
   .force-desktop-show {
     display: none !important;
   }
-}
+} */
 
 /* Animation keyframes */
 @keyframes bounce-slow {
@@ -305,10 +306,10 @@ body {
 }
 
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .mobile-text { font-size: clamp(0.75rem, 3vw, 1rem); }
   .mobile-button { min-height: 44px; min-width: 44px; }
-}
+} */
 
 @keyframes bounce-slow {
   0%,20%,50%,80%,100% { transform: translateY(0); }
@@ -316,3 +317,4 @@ body {
   60% { transform: translateY(-5px); }
 }
 .animate-bounce-slow { animation: bounce-slow 3s infinite; }
+
