@@ -17,26 +17,26 @@ const WelcomePopup = ({ show, onClose }) => {
       className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-[10000] p-4"
       style={{ zIndex: 10000 }}
     >
-      <div className="bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 p-4 sm:p-8 rounded-3xl w-full max-w-sm sm:max-w-2xl relative shadow-2xl border-4 border-amber-600 transform transition-all duration-500 animate-pulse-once">
-        <div className="absolute -top-4 -left-4 text-6xl animate-bounce">⚔️</div>
-        <div className="absolute -top-4 -right-4 text-6xl animate-bounce delay-300">🛡️</div>
+      <div className="bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 p-4 sm:p-8 rounded-3xl w-full max-w-sm sm:max-w-4xl relative shadow-2xl border-4 border-amber-600 transform transition-all duration-500 animate-pulse-once">
+        <div className="absolute -top-4 -left-4 text-6xl sm:text-8xl animate-bounce">⚔️</div>
+        <div className="absolute -top-4 -right-4 text-6xl sm:text-8xl animate-bounce delay-300">🛡️</div>
         
         <div className="text-center">
-          <h1 className="text-2xl sm:text-4xl font-bold mb-4 text-amber-900 flex items-center justify-center flex-wrap gap-2">
+          <h1 className="text-2xl sm:text-5xl font-bold mb-4 text-amber-900 flex items-center justify-center flex-wrap gap-2">
             <span className="text-4xl sm:text-6xl">🏴‍☠️</span>
             <span>Welcome, Viking Warrior!</span>
           </h1>
           
           <div className="bg-amber-100 p-4 sm:p-6 rounded-xl mb-6 border-2 border-amber-300">
-            <h2 className="text-lg sm:text-xl font-bold mb-3 text-amber-800 flex items-center justify-center gap-2">
-              <span className="text-2xl">📜</span>
+            <h2 className="text-lg sm:text-4xl font-bold mb-3 text-amber-800 flex items-center justify-center gap-2">
+              <span className="text-2xl sm:text-4xl">📜</span>
               The Legend of Ragnar's Discovery
             </h2>
-            <p className="text-amber-700 text-sm sm:text-base leading-relaxed mb-4">
+            <p className="text-amber-700 text-sm sm:text-4xl leading-relaxed mb-4">
               As Ragnar sailed the treacherous northern seas, a mystical fog lifted to reveal a floating island filled with ancient treasures and exotic wares. The Island Merchants, guardians of legendary artifacts, have been waiting centuries for worthy traders...
             </p>
-            <p className="text-amber-800 font-semibold text-sm sm:text-base">
-              <span className="text-xl mr-2">⚡</span>
+            <p className="text-amber-800 font-semibold text-sm sm:text-2xl">
+              <span className="text-xl sm:text-2xl mr-2">⚡</span>
               Will you join this epic trading adventure?
             </p>
           </div>
@@ -49,18 +49,18 @@ const WelcomePopup = ({ show, onClose }) => {
               className="bg-gradient-to-r from-red-600 via-orange-600 to-amber-600 hover:from-red-500 hover:via-orange-500 hover:to-amber-500 text-white px-6 sm:px-8 py-4 rounded-xl transition-all font-bold text-base sm:text-lg transform hover:scale-105 active:scale-95 text-center shadow-lg border-2 border-yellow-400 relative overflow-hidden group"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400 opacity-0 group-hover:opacity-20 transition-opacity"></span>
-              <span className="relative flex items-center justify-center gap-2">
-                <span className="text-xl sm:text-2xl">⚔️</span>
+              <span className="relative flex items-center justify-center gap-2 sm:text-4xl">
+                <span className="text-xl sm:text-4xl">⚔️</span>
                 Begin Your Quest!
-                <span className="text-xl sm:text-2xl">💰</span>
+                <span className="text-xl sm:text-4xl">💰</span>
               </span>
             </a>
             <button 
               onClick={onClose}
               className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-500 hover:to-gray-600 text-white px-6 py-4 rounded-xl transition-all font-semibold transform hover:scale-105 active:scale-95 text-sm sm:text-base"
             >
-              <span className="flex items-center justify-center gap-2">
-                <span>🌊</span>
+              <span className="flex items-center justify-center gap-2 sm:text-4xl">
+                <span className='sm:text-4xl'>🌊</span>
                 Explore First
               </span>
             </button>
@@ -69,12 +69,12 @@ const WelcomePopup = ({ show, onClose }) => {
           {/* Attention-grabbing elements */}
           <div className="mt-6 flex justify-center items-center gap-4 text-amber-700">
             <div className="flex items-center gap-1 text-xs sm:text-sm">
-              <span className="text-lg animate-pulse">🔥</span>
-              <span className="font-semibold">Limited Edition Items</span>
+              <span className="text-lg sm:text-2xl animate-pulse">🔥</span>
+              <span className="font-semibold sm:text-xl">Limited Edition Items</span>
             </div>
             <div className="flex items-center gap-1 text-xs sm:text-sm">
-              <span className="text-lg animate-pulse">⚡</span>
-              <span className="font-semibold">Rare Viking Artifacts</span>
+              <span className="text-lg animate-pulse sm:text-2xl">⚡</span>
+              <span className="font-semibold sm:text-xl">Rare Viking Artifacts</span>
             </div>
           </div>
         </div>
@@ -424,29 +424,29 @@ html, body {
       <FloatingShopButton onClick={goToShop} />
 
       {/* Enhanced Mobile Controls Panel */}
-      <div className={`absolute bottom-[15%] left-4 right-4 z-10 ${isMobile ? 'block' : 'hidden'}`}>
-        <div className="bg-black sm:p-10 bg-opacity-90 backdrop-blur-sm text-white p-4 rounded-2xl border border-amber-600">
+      <div className={`absolute bottom-[5%] left-4 right-4 z-10 ${isMobile ? 'block' : 'hidden'} lg:hidden`}>
+        <div className="bg-black sm:p-8 bg-opacity-90 backdrop-blur-sm text-white p-4 rounded-2xl border border-amber-600">
           <div className="grid grid-cols-3 gap-3 mb-3">
             <button 
               className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white px-3 py-3 rounded-xl text-xs font-bold flex flex-col items-center justify-center gap-1 transform active:scale-95 transition-all shadow-lg mobile-button border border-yellow-400"
               onClick={goToShop}
             >
-              <span className="text-2xl sm:text-4xl">🛒</span>
-              <span className="sm:text-4xl">SHOP</span>
+              <span className="text-xl sm:text-4xl">🛒</span>
+              <span className="text-sm sm:text-4xl">SHOP</span>
             </button>
             <button 
               className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white px-3 py-3 rounded-xl text-xs font-semibold flex flex-col items-center justify-center gap-1 transform active:scale-95 transition-all shadow-lg mobile-button"
               onClick={handleIslandClick}
             >
               <span className="text-lg sm:text-4xl">🏝️</span>
-              <span className="mobile-text sm:text-4xl">Island</span>
+              <span className="mobile-text text-sm sm:text-4xl">Island</span>
             </button>
             <button 
               className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white px-3 py-3 rounded-xl text-xs font-semibold flex flex-col items-center justify-center gap-1 transform active:scale-95 transition-all shadow-lg mobile-button"
               onClick={handleBoatClick}
             >
-              <span className="text-lg sm:text-4xl">🚢</span>
-              <span className="mobile-text sm:text-4xl">Boat</span>
+              <span className="text-sm sm:text-4xl">🚢</span>
+              <span className="mobile-text text-sm  sm:text-4xl">Boat</span>
             </button>
           </div>
           <div className="text-center text-xs opacity-75">

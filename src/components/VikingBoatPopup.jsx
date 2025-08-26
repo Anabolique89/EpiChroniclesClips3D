@@ -88,7 +88,7 @@ const VikingBoatPopup = ({ show, onClose }) => {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Floating emoji animation */}
-        <div className="absolute -top-4 -right-4 text-4xl sm:text-8xl animate-bounce">
+        <div className="absolute -top-4 -right-4 text-2xl sm:text-8xl animate-bounce">
           {currentStory.emoji}
         </div>
 
@@ -107,7 +107,7 @@ const VikingBoatPopup = ({ show, onClose }) => {
               <button
                 key={step}
                 onClick={() => handleStepClick(step)}
-                className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full transition-all duration-300 transform hover:scale-110 active:scale-95 ${
+                className={`w-4 h-4 sm:w-8 sm:h-8 rounded-full transition-all duration-300 transform hover:scale-110 active:scale-95 ${
                   step === currentStep 
                     ? 'bg-yellow-400 shadow-lg scale-125 animate-pulse' 
                     : step < currentStep 
@@ -122,12 +122,12 @@ const VikingBoatPopup = ({ show, onClose }) => {
 
         {/* Story content with slide animation */}
         <div className="text-center mb-4 sm:mb-6 overflow-hidden sm:p-4">
-          <h2 className="text-xl sm:text-6xl font-bold mb-3 sm:mb-4 text-yellow-100 flex items-center justify-center animate-fadeIn">
+          <h2 className="text-md sm:text-6xl font-bold mb-3 sm:mb-4 text-yellow-100 flex items-center justify-center animate-fadeIn">
             <span className="mr-2 text-2xl sm:text-6xl animate-pulse">{currentStory.title.split(' ')[0]}</span>
             <span className="animate-slideIn">{currentStory.title.split(' ').slice(1).join(' ')}</span>
           </h2>
           
-          <div className="text-white text-sm sm:text-4xl leading-relaxed mb-4 sm:mb-4 overflow-y-auto bg-opacity-30 p-4 rounded-lg backdrop-blur-sm animate-slideUp">
+          <div className="text-white md:text-md sm:text-4xl leading-relaxed mb-4 sm:mb-4 overflow-y-auto bg-opacity-30 p-4 rounded-lg backdrop-blur-sm animate-slideUp">
             <p className="animate-typewriter">{currentStory.content}</p>
           </div>
         </div>

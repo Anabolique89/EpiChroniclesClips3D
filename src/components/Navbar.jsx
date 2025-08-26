@@ -176,8 +176,8 @@ const navigation = {
     },
   ],
   pages: [
-    { name: 'About', href: '/About' },
-    { name: 'Contact', href: '/Contact' },
+    // { name: 'About', href: '/About' },
+    // { name: 'Contact', href: '/Contact' },
     
   ],
 }
@@ -222,7 +222,7 @@ const Navbar = () => {
                           <img
                             alt={item.imageAlt}
                             src={item.imageSrc}
-                            className="aspect-square w-full rounded-md bg-gray-100 object-cover group-hover:opacity-75"
+                            className="aspect-square w-full rounded-md bg-white object-cover group-hover:opacity-75"
                           />
                           <a href={item.href} className="mt-6 block text-sm sm:text-4xl font-medium text-gray-900">
                             <span aria-hidden="true" className="absolute inset-0 z-10" />
@@ -269,14 +269,14 @@ const Navbar = () => {
        
 
           {/* Secondary navigation */}
-          <div className="bg-black  py-4">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="bg-black py-0 sm:py-4">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6">
               <div className="">
-                <div className="flex h-20 items-center justify-between">
+                <div className="flex h-10 items-center justify-between">
                   {/* Logo (lg+) */}
                   <div className="hidden lg:flex lg:flex-1 lg:items-center">
                     <a href="/">
-                      <span className="sr-only">Epic Chronicles Clips</span>
+              
                       <img
                         alt="logo"
                         src={logo}
@@ -292,7 +292,7 @@ const Navbar = () => {
                         {navigation.categories.map((category) => (
                           <Popover key={category.name} className="flex">
                             <div className="relative flex">
-                              <PopoverButton className="group relative flex items-center justify-center text-xl sm:text-2xl font-medium text-gray-700 transition-colors duration-200 ease-out hover:text-gray-800 data-[open]:text-indigo-600">
+                              <PopoverButton className="group relative flex items-center justify-center text-xl sm:text-2xl font-medium text-gray-300 transition-colors duration-200 ease-out hover:text-orange-600 data-[open]:text-indigo-600">
                                 {category.name}
                                 <span
                                   aria-hidden="true"
@@ -302,7 +302,7 @@ const Navbar = () => {
                             </div>
                             <PopoverPanel
                               transition
-                              className="absolute inset-x-0 top-full z-20 w-full bg-red sm:text-2xl font-medium text-gray-500 transition data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+                              className="absolute inset-x-0 top-full z-20 w-full bg-red sm:text-2xl text-md font-medium text-gray-500 transition data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
                             >
                               {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
                               <div aria-hidden="true" className="absolute inset-0 top-1/2 bg-transparent shadow" />
