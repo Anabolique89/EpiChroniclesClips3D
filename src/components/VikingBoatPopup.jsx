@@ -82,32 +82,32 @@ const VikingBoatPopup = ({ show, onClose }) => {
       style={{ zIndex: 9999 }}
     >
       <div 
-        className={`bg-gradient-to-br ${currentStory.bgGradient} p-6 sm:p-4 rounded-2xl w-full max-w-sm sm:max-w-4xl relative shadow-2xl border-4 border-yellow-400 transform transition-all duration-500 ${
+        className={`bg-gradient-to-br ${currentStory.bgGradient} p-6 sm:p-4 rounded-2xl w-full lg:max-w-md sm:max-w-4xl relative shadow-2xl border-4 border-yellow-400 transform transition-all duration-500 ${
           isAnimating ? 'scale-100 opacity-100 rotate-0' : 'scale-75 opacity-0 rotate-12'
         }`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Floating emoji animation */}
-        <div className="absolute -top-4 -right-4 text-2xl sm:text-8xl animate-bounce">
+        <div className="absolute -top-4 -right-4 lg:text-2xl sm:text-8xl animate-bounce">
           {currentStory.emoji}
         </div>
 
         {/* Close button */}
         <button 
           onClick={handleClose}
-          className="absolute top-2 right-2 sm:top-3 sm:right-3 text-white hover:text-yellow-300 text-2xl sm:text-5xl font-bold w-8 h-8 sm:w-20 sm:h-20 flex items-center justify-center rounded-full hover:bg-white hover:bg-opacity-20 transition-all transform hover:scale-110 active:scale-95"
+          className="absolute top-2 right-2 sm:top-3 sm:right-3 text-white hover:text-yellow-300 lg:text-md sm:text-4xl font-bold lg:w-8 lg:h-8 sm:w-15 sm:h-15 flex items-center justify-center rounded-full hover:bg-opacity-20 transition-all transform hover:scale-110 active:scale-95"
         >
           ×
         </button>
 
         {/* Interactive story progress indicator */}
-        <div className="flex justify-center mb-4 sm:mb-8 sm:mt-8">
-          <div className="flex space-x-2 sm:space-x-3">
+        <div className="flex justify-center lg:mb-4 sm:mb-8 sm:mt-8">
+          <div className="flex lg:space-x-2 sm:space-x-3">
             {[1, 2, 3, 4].map((step) => (
               <button
                 key={step}
                 onClick={() => handleStepClick(step)}
-                className={`w-4 h-4 sm:w-8 sm:h-8 rounded-full transition-all duration-300 transform hover:scale-110 active:scale-95 ${
+                className={`lg:w-4 lg:h-4 sm:w-8 sm:h-8 rounded-full transition-all duration-300 transform hover:scale-110 active:scale-95 ${
                   step === currentStep 
                     ? 'bg-yellow-400 shadow-lg scale-125 animate-pulse' 
                     : step < currentStep 
@@ -121,22 +121,22 @@ const VikingBoatPopup = ({ show, onClose }) => {
         </div>
 
         {/* Story content with slide animation */}
-        <div className="text-center mb-4 sm:mb-6 overflow-hidden sm:p-4">
-          <h2 className="text-md sm:text-6xl font-bold mb-3 sm:mb-4 text-yellow-100 flex items-center justify-center animate-fadeIn">
-            <span className="mr-2 text-2xl sm:text-6xl animate-pulse">{currentStory.title.split(' ')[0]}</span>
+        <div className="text-center lg:mb-2 sm:mb-6 overflow-auto sm:p-4">
+          <h2 className="lg:text-xl sm:text-4xl font-bold lg:mb-0 sm:mb-4 text-yellow-100 flex items-center justify-center animate-fadeIn">
+            <span className="mr-2 lg:text-xl sm:text-6xl animate-pulse">{currentStory.title.split(' ')[0]}</span>
             <span className="animate-slideIn">{currentStory.title.split(' ').slice(1).join(' ')}</span>
           </h2>
           
-          <div className="text-white md:text-md sm:text-4xl leading-relaxed mb-4 sm:mb-4 overflow-y-auto bg-opacity-30 p-4 rounded-lg backdrop-blur-sm animate-slideUp">
+          <div className="text-white lg:text-sm sm:text-4xl leading-relaxed lg:mb-0 sm:mb-4 overflow-y-auto scrollbar-thin bg-opacity-30 p-2 rounded-lg backdrop-blur-sm animate-slideUp">
             <p className="animate-typewriter">{currentStory.content}</p>
           </div>
         </div>
 
         {/* Action buttons with hover effects */}
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+        <div className="flex sm:flex-row gap-3 justify-center">
           <button 
             onClick={handleNext}
-            className={`text-white text-4xl px-4 sm:px-6 py-3 rounded-lg transition-all duration-300 font-bold shadow-lg flex items-center justify-center gap-2 transform hover:scale-105 hover:shadow-2xl active:scale-95 group ${
+            className={`text-white lg:text-sm sm:text-4xl lg:px-2 sm:px-4 lg:py-0 sm:py-3 rounded-lg transition-all duration-300 font-bold shadow-lg flex items-center justify-center gap-2 transform hover:scale-105 hover:shadow-2xl active:scale-95 group ${
               currentStep === 4 
                 ? 'bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 animate-pulse hover:animate-none' 
                 : 'bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 animate-pulse hover:animate-none'
@@ -150,14 +150,14 @@ const VikingBoatPopup = ({ show, onClose }) => {
           
           <button 
             onClick={handleClose}
-            className="bg-gray-600 hover:bg-gray-500 text-white sm:text-4xl px-4 sm:px-6 py-3 rounded-lg transition-all duration-300 font-semibold shadow-lg transform hover:scale-105 active:scale-95"
+            className="bg-gray-600 hover:bg-gray-500 text-white lg:text-sm sm:text-4xl lg:px-2 sm:px-6 py-3 rounded-lg transition-all duration-300 font-semibold shadow-lg transform hover:scale-105 active:scale-95"
           >
             {currentStep === 4 ? 'End Story ⚔️' : 'Close 🛡️'}
           </button>
         </div>
 
         {/* Step indicator with Viking theme */}
-        <div className="text-center mt-4 text-xs sm:text-2xl text-yellow-200 flex items-center justify-center gap-2 p-6">
+        <div className="text-center mt-4 lg:text-xs sm:text-2xl text-yellow-200 flex items-center justify-center gap-2 p-2">
           <span className="animate-bounce">⚔️</span>
           <span>Chapter {currentStep} of 4</span>
           <span className="animate-bounce delay-300">🛡️</span>
@@ -165,13 +165,13 @@ const VikingBoatPopup = ({ show, onClose }) => {
 
         {/* Decorative elements */}
         <div className="absolute bottom-2 left-2 text-yellow-400 opacity-50 animate-pulse">
-          <span className="text-lg sm:text-2xl">🗿</span>
+          <span className="lg:text-lg sm:text-7xl">🗿</span>
         </div>
-        <div className="absolute top-1/4 left-2 text-yellow-400 opacity-30 animate-bounce delay-1000">
-          <span className="text-sm sm:text-lg">⚡</span>
+        <div className="absolute top-1/11 left-2 text-yellow-400 opacity-30 animate-bounce delay-1000">
+          <span className="lg:text-sm sm:text-4xl">⚡</span>
         </div>
         <div className="absolute bottom-1/4 right-4 text-yellow-400 opacity-40 animate-pulse delay-500">
-          <span className="text-sm sm:text-lg">🌟</span>
+          <span className="lg:text-sm sm:text-4xl">🌟</span>
         </div>
       </div>
 

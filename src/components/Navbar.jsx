@@ -196,7 +196,7 @@ const Navbar = () => {
         <div className="fixed inset-0 z-40 flex">
           <DialogPanel
             transition
-            className="relative flex w-full max-w-l transform flex-col overflow-y-auto bg-blue-300 pb-12 shadow-xl transition duration-300 ease-in-out data-[closed]:-translate-x-full"
+            className="relative flex w-full max-w-l transform flex-col overflow-y-auto bg-blue-300/60 pb-12 shadow-xl transition duration-300 ease-in-out data-[closed]:-translate-x-full"
           >
             <div className="flex px-4 pb-2 pt-5">
               <button

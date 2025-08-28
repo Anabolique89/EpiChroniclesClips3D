@@ -784,6 +784,15 @@ const Island2 = ({ isRotating, setIsRotating, setCurrentStage, currentFocusPoint
         material={materials.pillar}
         position={[-52.458, 5.563, -6.101]}
         rotation={[0.201, -1.008, 0.162]}
+          onClick={handleMeshClick}
+          onPointerOver={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'pointer';
+          }}
+          onPointerOut={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'auto';
+          }}
       />
       
       <mesh
@@ -808,6 +817,15 @@ const Island2 = ({ isRotating, setIsRotating, setCurrentStage, currentFocusPoint
         material={materials.pillar}
         position={[-50.555, 5.456, 5.89]}
         rotation={[0.011, 0.509, 0.036]}
+          onClick={handleMeshClick}
+          onPointerOver={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'pointer';
+          }}
+          onPointerOut={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'auto';
+          }}
       />
       <mesh
         
@@ -816,6 +834,15 @@ const Island2 = ({ isRotating, setIsRotating, setCurrentStage, currentFocusPoint
         material={materials.pillar}
         position={[-48.998, 5.489, 8.394]}
         rotation={[-0.009, 0.524, -0.028]}
+          onClick={handleMeshClick}
+          onPointerOver={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'pointer';
+          }}
+          onPointerOut={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'auto';
+          }}
       />
       <mesh
         
@@ -832,6 +859,15 @@ const Island2 = ({ isRotating, setIsRotating, setCurrentStage, currentFocusPoint
         material={materials.pillar}
         position={[-48.264, 5.476, 9.722]}
         rotation={[-0.03, 0.535, 0.023]}
+          onClick={handleMeshClick}
+          onPointerOver={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'pointer';
+          }}
+          onPointerOut={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'auto';
+          }}
         
       />
       <mesh
@@ -841,6 +877,15 @@ const Island2 = ({ isRotating, setIsRotating, setCurrentStage, currentFocusPoint
         material={materials.pillar}
         position={[-48.069, 5.415, 6.987]}
         rotation={[0.011, 0.509, 0.036]}
+          onClick={handleMeshClick}
+          onPointerOver={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'pointer';
+          }}
+          onPointerOut={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'auto';
+          }}
       />
       <mesh
         
@@ -857,6 +902,15 @@ const Island2 = ({ isRotating, setIsRotating, setCurrentStage, currentFocusPoint
         material={materials.pillar}
         position={[-51.55, 5.475, 9.999]}
         rotation={[-0.022, -1.029, -0.083]}
+          onClick={handleMeshClick}
+          onPointerOver={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'pointer';
+          }}
+          onPointerOut={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'auto';
+          }}
       />
       <mesh
         
@@ -865,6 +919,15 @@ const Island2 = ({ isRotating, setIsRotating, setCurrentStage, currentFocusPoint
         material={materials.pillar}
         position={[-52.407, 5.438, 11.365]}
         rotation={[-0.03, 0.535, 0.023]}
+          onClick={handleMeshClick}
+          onPointerOver={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'pointer';
+          }}
+          onPointerOut={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'auto';
+          }}
       />
       <mesh
         
@@ -873,6 +936,15 @@ const Island2 = ({ isRotating, setIsRotating, setCurrentStage, currentFocusPoint
         material={materials.pillar}
         position={[-52.302, 5.418, 8.725]}
         rotation={[0.011, 0.509, 0.036]}
+          onClick={handleMeshClick}
+          onPointerOver={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'pointer';
+          }}
+          onPointerOut={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'auto';
+          }}
       />
       <mesh
         
@@ -897,6 +969,15 @@ const Island2 = ({ isRotating, setIsRotating, setCurrentStage, currentFocusPoint
         material={materials.pillar}
         position={[-49.115, 6.646, -5.267]}
         rotation={[-0.137, 0.545, 0.403]}
+          onClick={handleMeshClick}
+          onPointerOver={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'pointer';
+          }}
+          onPointerOut={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'auto';
+          }}
       />
       <mesh
         
@@ -905,6 +986,15 @@ const Island2 = ({ isRotating, setIsRotating, setCurrentStage, currentFocusPoint
         material={materials.pillar}
         position={[-49.142, 6.874, -7.899]}
         rotation={[-0.131, 0.502, 0.335]}
+          onClick={handleMeshClick}
+          onPointerOver={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'pointer';
+          }}
+          onPointerOut={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'auto';
+          }}
       />
       <mesh
         
@@ -913,6 +1003,15 @@ const Island2 = ({ isRotating, setIsRotating, setCurrentStage, currentFocusPoint
         material={materials.pillar}
         position={[-47.349, 7.215, -5.511]}
         rotation={[-0.113, 0.561, 0.289]}
+          onClick={handleMeshClick}
+          onPointerOver={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'pointer';
+          }}
+          onPointerOut={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'auto';
+          }}
       />
       <mesh
         
@@ -921,6 +1020,7 @@ const Island2 = ({ isRotating, setIsRotating, setCurrentStage, currentFocusPoint
         material={materials.bones}
         position={[-16.769, 8.447, -43.704]}
         rotation={[-0.478, 1.205, 0.307]}
+        
       />
       <mesh
         
@@ -1113,6 +1213,15 @@ const Island2 = ({ isRotating, setIsRotating, setCurrentStage, currentFocusPoint
         material={materials.pillar}
         position={[-48.335, 5.707, 2.827]}
         rotation={[0.082, -0.021, 0.005]}
+          onClick={handleMeshClick}
+          onPointerOver={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'pointer';
+          }}
+          onPointerOut={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'auto';
+          }}
       />
       <mesh
         
@@ -1120,6 +1229,15 @@ const Island2 = ({ isRotating, setIsRotating, setCurrentStage, currentFocusPoint
         geometry={nodes.Object_192.geometry}
         material={materials.pillar}
         position={[-41.547, 6.947, 26.178]}
+          onClick={handleMeshClick}
+          onPointerOver={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'pointer';
+          }}
+          onPointerOut={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'auto';
+          }}
       />
       <mesh
         
@@ -1128,6 +1246,15 @@ const Island2 = ({ isRotating, setIsRotating, setCurrentStage, currentFocusPoint
         material={materials.pillar}
         position={[-52.494, 6.064, -20.84]}
         rotation={[0.01, -0.018, 0.045]}
+          onClick={handleMeshClick}
+          onPointerOver={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'pointer';
+          }}
+          onPointerOut={(e) => {
+            safePreventDefault(e);
+            document.body.style.cursor = 'auto';
+          }}
       />
       <mesh
         

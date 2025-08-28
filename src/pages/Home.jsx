@@ -7,79 +7,85 @@ import HomeInfo from '../components/HomeInfo';
 import Island2 from '../models/Island2';
 import { Bird } from '../models/Bird';
 import VikingBoatPopup from '../components/VikingBoatPopup';
+import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react'
 
 // Welcome popup for first-time visitors
 const WelcomePopup = ({ show, onClose }) => {
-  if (!show) return null;
-
   return (
-    <div 
-      className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-[10000] p-4"
-      style={{ zIndex: 10000 }}
-    >
-      <div className="bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 p-4 sm:p-8 rounded-3xl w-full max-w-sm sm:max-w-4xl relative shadow-2xl border-4 border-amber-600 transform transition-all duration-500 animate-pulse-once">
-        <div className="absolute -top-4 -left-4 text-6xl sm:text-8xl animate-bounce">⚔️</div>
-        <div className="absolute -top-4 -right-4 text-6xl sm:text-8xl animate-bounce delay-300">🛡️</div>
-        
-        <div className="text-center">
-          <h1 className="text-2xl sm:text-5xl font-bold mb-4 text-amber-900 flex items-center justify-center flex-wrap gap-2">
-            <span className="text-4xl sm:text-6xl">🏴‍☠️</span>
-            <span>Welcome, Viking Warrior!</span>
-          </h1>
-          
-          <div className="bg-amber-100 p-4 sm:p-6 rounded-xl mb-6 border-2 border-amber-300">
-            <h2 className="text-lg sm:text-4xl font-bold mb-3 text-amber-800 flex items-center justify-center gap-2">
-              <span className="text-2xl sm:text-4xl">📜</span>
-              The Legend of Ragnar's Discovery
-            </h2>
-            <p className="text-amber-700 text-sm sm:text-4xl leading-relaxed mb-4">
-              As Ragnar sailed the treacherous northern seas, a mystical fog lifted to reveal a floating island filled with ancient treasures and exotic wares. The Island Merchants, guardians of legendary artifacts, have been waiting centuries for worthy traders...
-            </p>
-            <p className="text-amber-800 font-semibold text-sm sm:text-2xl">
-              <span className="text-xl sm:text-2xl mr-2">⚡</span>
-              Will you join this epic trading adventure?
-            </p>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="https://10zpwk-n0.myshopify.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-gradient-to-r from-red-600 via-orange-600 to-amber-600 hover:from-red-500 hover:via-orange-500 hover:to-amber-500 text-white px-6 sm:px-8 py-4 rounded-xl transition-all font-bold text-base sm:text-lg transform hover:scale-105 active:scale-95 text-center shadow-lg border-2 border-yellow-400 relative overflow-hidden group"
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400 opacity-0 group-hover:opacity-20 transition-opacity"></span>
-              <span className="relative flex items-center justify-center gap-2 sm:text-4xl">
-                <span className="text-xl sm:text-4xl">⚔️</span>
-                Begin Your Quest!
-                <span className="text-xl sm:text-4xl">💰</span>
-              </span>
-            </a>
-            <button 
-              onClick={onClose}
-              className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-500 hover:to-gray-600 text-white px-6 py-4 rounded-xl transition-all font-semibold transform hover:scale-105 active:scale-95 text-sm sm:text-base"
-            >
-              <span className="flex items-center justify-center gap-2 sm:text-4xl">
-                <span className='sm:text-4xl'>🌊</span>
-                Explore First
-              </span>
-            </button>
-          </div>
-          
-          {/* Attention-grabbing elements */}
-          <div className="mt-6 flex justify-center items-center gap-4 text-amber-700">
-            <div className="flex items-center gap-1 text-xs sm:text-sm">
-              <span className="text-lg sm:text-2xl animate-pulse">🔥</span>
-              <span className="font-semibold sm:text-xl">Limited Edition Items</span>
+    <Dialog open={show} onClose={onClose} className="relative z-10">
+      <div className="fixed inset-0 z-10 w-screen overflow-y-auto bg-black/70 transition-opacity dark:bg-gray-900/80">
+        <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+          <DialogPanel
+            transition
+            className="relative transform overflow-hidden bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 rounded-3xl shadow-2xl border-4 border-amber-600 transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-4 sm:w-full sm:max-w-3xl lg:max-w-md data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
+          >
+            <div className="bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+              <div className="text-center">
+                <div className="absolute -top-4 -left-4 animate-bounce">⚔️</div>
+                <div className="absolute -top-4 -right-4 animate-bounce delay-300">🛡️</div>
+                
+                <h1 className="lg:text-2xl sm:text-4xl font-bold mb-4 text-amber-900 flex items-center justify-center flex-wrap gap-2">
+                  <span className="lg:text-3xl sm:text-6xl">🏴‍☠️</span>
+                  <span>Welcome, Viking Warrior!</span>
+                </h1>
+                
+                <div className="bg-amber-100 p-4 sm:p-6 rounded-xl mb-6 border-2 border-amber-300">
+                  <h2 className="lg:text-lg sm:text-4xl font-bold mb-3 text-amber-800 flex items-center justify-center gap-2">
+                    <span className="lg:text-2xl sm:text-4xl">📜</span>
+                    The Legend of Ragnar's Discovery
+                  </h2>
+                  <p className="text-amber-700 lg:text-sm sm:text-4xl leading-relaxed mb-4">
+                    As Ragnar sailed the treacherous northern seas, a mystical fog lifted to reveal a floating island filled with ancient treasures and exotic wares. The Island Merchants, guardians of legendary artifacts, have been waiting centuries for worthy traders...
+                  </p>
+                  <p className="text-amber-800 font-semibold lg:text-sm sm:text-xl">
+                    <span className="text-sm mr-2 sm:text-2xl">⚡</span>
+                    Will you join this epic trading adventure?
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="flex items-center gap-1 text-xs sm:text-sm">
-              <span className="text-lg animate-pulse sm:text-2xl">⚡</span>
-              <span className="font-semibold sm:text-xl">Rare Viking Artifacts</span>
+            
+            <div className="bg-amber-50/50 px-4 py-2 sm:flex sm:flex-row sm:px-6 gap-4 justify-center sm:mb-4">
+              <a 
+                href="https://10zpwk-n0.myshopify.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex w-full justify-center rounded-xl bg-gradient-to-r from-red-600 via-orange-600 to-amber-600 px-3 py-2 lg:text-sm sm:text-3xl font-semibold text-white shadow-sm hover:from-red-500 hover:via-orange-500 hover:to-amber-500 sm:ml-3 sm:w-auto border-2 border-yellow-400 relative overflow-hidden group transform hover:scale-105 active:scale-95 transition-all"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400 opacity-0 group-hover:opacity-20 transition-opacity"></span>
+                <span className="relative flex items-center justify-center gap-2">
+                  <span>⚔️</span>
+                  Begin Your Quest!
+                  <span>💰</span>
+                </span>
+              </a>
+              
+              <button 
+                onClick={onClose}
+                className="mt-3 inline-flex w-full justify-center rounded-xl bg-gradient-to-r from-gray-600 to-gray-700 px-3 py-2 lg:text-sm sm:text-3xl font-semibold text-white shadow-sm hover:from-gray-500 hover:to-gray-600 sm:mt-0 sm:w-auto transform hover:scale-105 active:scale-95 transition-all"
+              >
+                <span className="flex items-center justify-center gap-2">
+                  <span>🌊</span>
+                  Explore First
+                </span>
+              </button>
+              
+              {/* Attention-grabbing elements */}
+              <div className="mt-4 sm:mt-0 sm:absolute sm:-bottom-8 sm:left-1/2 sm:transform sm:-translate-x-1/2 flex justify-center items-center gap-4 text-amber-700 text-xs">
+                <div className="flex items-center gap-1">
+                  <span className="animate-pulse">🔥</span>
+                  <span className="font-semibold">Limited Edition</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <span className="animate-pulse">⚡</span>
+                  <span className="font-semibold">Rare Artifacts</span>
+                </div>
+              </div>
             </div>
-          </div>
+          </DialogPanel>
         </div>
       </div>
-    </div>
+    </Dialog>
   );
 };
 
@@ -88,101 +94,119 @@ const IslandPopup = ({ show, onClose }) => {
   if (!show) return null;
 
   return (
-    <div 
-      className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4"
-      onClick={onClose}
-      style={{ zIndex: 9999 }}
-    >
+     <div className="relative z-10">
+      {/* Backdrop */}
       <div 
-        className="bg-gradient-to-br from-emerald-900 via-teal-800 to-green-900 p-4 sm:p-8 rounded-3xl w-full max-w-sm sm:max-w-4xl relative shadow-2xl border-4 border-emerald-400 transform transition-all duration-300 "
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* Floating magical elements */}
-        <div className="absolute -top-6 -left-6 text-6xl animate-bounce">🌟</div>
-        <div className="absolute -top-4 -right-4 text-6xl animate-pulse">🔮</div>
-        <div className="absolute bottom-4 left-2 text-6xl animate-bounce delay-500">✨</div>
-        
-        <button 
-          onClick={onClose}
-          className="absolute top-3 right-3 text-emerald-200 hover:text-emerald-100 text-3xl sm:text-5xl font-bold w-10 h-10 flex items-center justify-center rounded-full hover:bg-emerald-700 hover:bg-opacity-50 transition-all transform hover:scale-110"
-        >
-          ×
-        </button>
-        
-        <div className="text-center">
-          <h2 className="text-2xl sm:text-6xl font-bold mb-4 text-emerald-100 flex items-center justify-center p-2 ">
-            <span className="mr-3 text-5xl animate-pulse">🏝️</span>
-            The Island Merchants
-            <span className="ml-3 text-5xl animate-pulse">⚖️</span>
-          </h2>
-          
-          <div className="bg-emerald-800 bg-opacity-60 p-4 sm:p-6 rounded-xl mb-6 border-2 border-emerald-400 backdrop-blur-sm">
-            <h3 className="text-lg sm:text-4xl font-bold mb-4 text-emerald-200 flex items-center justify-center gap-2 p-2">
-              <span className="text-4xl">👑</span>
-              Astrid the Truthseer Speaks
-            </h3>
+        className="fixed inset-0 bg-black/70 transition-opacity dark:bg-gray-900/80"
+        onClick={onClose}
+      />
+      
+      {/* Dialog container */}
+      <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+          <div 
+            className="relative transform overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-900 via-teal-800 to-green-900 text-left shadow-2xl transition-all sm:my-8 lg:my-0 sm:w-full sm:max-w-4xl lg:max-w-xl border-4 border-emerald-400"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Floating magical elements */}
+            <div className="absolute lg:-top-0 lg:-left-0 sm:-top-6 sm:-left-6 lg:text-2xl sm:text-6xl animate-bounce">🌟</div>
+            <div className="absolute lg:-top-0 lg:-right-0 sm:-top-6 sm:-right-6 lg:text-2xl sm:text-6xl animate-pulse">🔮</div>
+            <div className="absolute bottom-4 left-2 lg:text-2xl sm:text-6xl animate-bounce delay-500">✨</div>
             
-            <div className="text-emerald-100 text-sm sm:text-3xl leading-relaxed space-y-4">
-              <p className="italic">
-                "For centuries, we Island Merchants have dwelled in this mystical realm, suspended between the mortal world and the realm of magic. We are the guardians of ancient treasures, keepers of enchanted wares that hold power beyond mortal understanding."
-              </p>
-              
-              <p>
-                <span className="text-emerald-300 font-semibold">🔮 Our prophecy foretold</span> of northern warriors who would arrive with hearts brave enough to seek true treasure. When Ragnar's dragon-prowed vessel pierced our protective mists, we knew the time had come.
-              </p>
-              
-              <p>
-                <span className="text-amber-300 font-semibold">💎 The Great Exchange</span> was no mere trade - it was destiny fulfilled. Our enchanted crystals, healing potions, and mystical maps found their rightful owners, while the Vikings' amber, iron, and furs became imbued with our island's ancient magic.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-r from-amber-800 to-orange-800 p-4 sm:p-8 rounded-lg mb-6 border border-amber-400">
-            <p className="text-amber-100 text-sm sm:text-4xl font-semibold">
-              <span className="text-xl sm:text-4xl mr-2">⚡</span>
-              "The trading hall remains open, brave soul. Will you discover what magical wares await your worthy hands?"
-              <span className="text-xl sm:text-4xl ml-2">⚡</span>
-            </p>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center p-4">
-            <a 
-              href="https://10zpwk-n0.myshopify.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 hover:from-amber-500 hover:via-orange-500 hover:to-red-500 text-white px-6 sm:px-8 py-4 rounded-xl transition-all font-bold text-base sm:text-lg transform hover:scale-105 active:scale-95 text-center shadow-lg border-2 border-yellow-400 relative overflow-hidden group"
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400 opacity-0 group-hover:opacity-20 transition-opacity"></span>
-              <span className="relative flex items-center justify-center gap-2 sm:text-4xl">
-                <span className="text-xl sm:text-4xl">🏛️</span>
-                Enter the Trading Hall
-                <span className="text-xl sm:text-4xl">💰</span>
-              </span>
-            </a>
+            {/* Close button */}
             <button 
               onClick={onClose}
-              className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 text-white px-6 py-4 rounded-xl transition-all font-semibold transform hover:scale-105 active:scale-95 sm:text-4xl"
+              className="absolute top-3 right-3 text-emerald-200 hover:text-emerald-100 text-2xl sm:text-4xl font-bold w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center rounded-full hover:bg-emerald-700 hover:bg-opacity-50 transition-all transform hover:scale-110"
             >
-              <span className="flex items-center justify-center gap-2">
-                <span>🌊</span>
-                Return to Waters
-              </span>
+              ×
             </button>
-          </div>
-          
-          {/* Mystical elements */}
-          <div className="mt-6 flex justify-center items-center gap-6 text-emerald-300 sm:text-4xl">
-            <div className="flex flex-col items-center gap-1 text-xs sm:text-xl">
-              <span className="text-2xl animate-pulse sm:text-4xl">💎</span>
-              <span className="font-semibold">Enchanted Crystals</span>
+
+            {/* Main content */}
+            <div className="px-4 pb-4 pt-5 sm:p-8 sm:pb-6">
+              <div className="text-center">
+                {/* Header */}
+                <h2 className="lg:text-xl sm:text-5xl font-bold mb-4 text-emerald-100 flex items-center justify-center">
+                  <span className="mr-2 sm:mr-3 lg:text-xl sm:text-5xl animate-pulse">🏝️</span>
+                  The Island Merchants
+                  <span className="ml-2 sm:ml-3 lg:text-xl sm:text-5xl animate-pulse">⚖️</span>
+                </h2>
+                
+                {/* Story section */}
+                <div className="bg-emerald-800/60 p-4 sm:p-6 rounded-xl mb-6 border-2 border-emerald-400 backdrop-blur-sm">
+                  <h3 className="lg:text-base sm:text-4xl font-bold mb-4 text-emerald-200 flex items-center justify-center gap-2">
+                    <span className="text-2xl sm:text-4xl">👑</span>
+                    Astrid the Truthseer Speaks
+                  </h3>
+                  
+                  <div className="text-emerald-100 lg:text-xs sm:text-3xl leading-relaxed space-y-3 sm:space-y-4">
+                    <p className="italic">
+                      "For centuries, we Island Merchants have dwelled in this mystical realm, suspended between the mortal world and the realm of magic. We are the guardians of ancient treasures, keepers of enchanted wares that hold power beyond mortal understanding."
+                    </p>
+                    
+                    <p>
+                      <span className="text-emerald-300 font-semibold">🔮 Our prophecy foretold</span> of northern warriors who would arrive with hearts brave enough to seek true treasure. When Ragnar's dragon-prowed vessel pierced our protective mists, we knew the time had come.
+                    </p>
+                    
+                    <p>
+                      <span className="text-amber-300 font-semibold">💎 The Great Exchange</span> was no mere trade - it was destiny fulfilled. Our enchanted crystals, healing potions, and mystical maps found their rightful owners, while the Vikings' amber, iron, and furs became imbued with our island's ancient magic.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Call to action */}
+                <div className="bg-gradient-to-r from-amber-800 to-orange-800 p-3 sm:p-6 rounded-lg mb-6 border border-amber-400">
+                  <p className="text-amber-100 lg:text-xs sm:text-3xl font-semibold">
+                    <span className="lg:text-base sm:text-3xl mr-1 sm:mr-2">⚡</span>
+                    "The trading hall remains open, brave soul. Will you discover what magical wares await your worthy hands?"
+                    <span className="lg:text-base sm:text-3xl ml-1 sm:ml-2">⚡</span>
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="flex flex-col items-center gap-1 text-xs sm:text-xl">
-              <span className="text-2xl animate-pulse delay-300 sm:text-4xl">🗺️</span>
-              <span className="font-semibold">Treasure Maps</span>
+
+            {/* Action buttons */}
+            <div className="bg-emerald-900/50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-8 sm:py-6">
+              <a 
+                href="https://10zpwk-n0.myshopify.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex w-full justify-center rounded-xl bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 px-4 py-3 text-sm font-bold text-white shadow-lg hover:from-amber-500 hover:via-orange-500 hover:to-red-500 transform hover:scale-105 active:scale-95 sm:ml-3 sm:w-auto border-2 border-yellow-400 relative overflow-hidden group"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400 opacity-0 group-hover:opacity-20 transition-opacity"></span>
+                <span className="relative flex items-center justify-center gap-2 lg:text-sm sm:text-4xl">
+                  <span className="text-base sm:text-3xl">🏛️</span>
+                  Enter the Trading Hall
+                  <span className="text-base sm:text-3xl">💰</span>
+                </span>
+              </a>
+              
+              <button 
+                onClick={onClose}
+                className="mt-3 inline-flex w-full justify-center rounded-xl bg-gradient-to-r from-gray-700 to-gray-800 px-4 py-4 text-sm font-semibold text-white shadow-sm hover:from-gray-600 hover:to-gray-700 transform hover:scale-105 active:scale-95 sm:mt-0 sm:w-auto"
+              >
+                <span className="flex items-center justify-center gap-2 lg:text-sm sm:text-4xl">
+                  <span>🌊</span>
+                  Return to Waters
+                </span>
+              </button>
             </div>
-            <div className="flex flex-col items-center gap-1 text-xs sm:text-xl">
-              <span className="text-2xl sm:text-4xl animate-pulse delay-500">🧪</span>
-              <span className="font-semibold">Healing Potions</span>
+            
+            {/* Mystical elements footer */}
+            <div className="px-4 pb-4 sm:px-8 sm:pb-6">
+              <div className="flex justify-center items-center gap-4 sm:gap-6 text-emerald-300">
+                <div className="flex flex-col items-center gap-1 lg:text-xs sm:text-xl">
+                  <span className="text-xl sm:text-3xl animate-pulse">💎</span>
+                  <span className="font-semibold">Enchanted Crystals</span>
+                </div>
+                <div className="flex flex-col items-center gap-1 lg:text-xs sm:text-xl">
+                  <span className="text-xl sm:text-3xl animate-pulse delay-300">🗺️</span>
+                  <span className="font-semibold">Treasure Maps</span>
+                </div>
+                <div className="flex flex-col items-center gap-1 lg:text-xs sm:text-xl">
+                  <span className="lg:text-xl sm:text-3xl animate-pulse delay-500">🧪</span>
+                  <span className="font-semibold">Healing Potions</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -195,7 +219,7 @@ const IslandPopup = ({ show, onClose }) => {
 const FloatingShopButton = ({ onClick }) => (
   <button
     onClick={onClick}
-    className="fixed bottom-80 right-4 z-40 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white px-4 py-3 rounded-full text-sm sm:text-4xl font-bold shadow-2xl transform hover:scale-110 active:scale-95 transition-all border-2 border-yellow-400 animate-bounce-slow lg:hidden sm:p-6"
+    className="fixed bottom-[30%] right-4 z-40 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white px-4 py-3 rounded-full text-sm sm:text-4xl font-bold shadow-2xl transform hover:scale-110 active:scale-95 transition-all border-2 border-yellow-400 animate-bounce-slow lg:hidden sm:p-6"
   >
     <span className="flex items-center gap-2">
       <span className="text-lg sm:text-4xl">🛒</span>
@@ -318,7 +342,7 @@ const Home = () => {
   const [boatScale, boatPosition, boatRotation] = adjustBoatForScreenSize();
 
   return (
-    <section className='w-full h-screen relative overflow-hidden'>
+    <section className='w-full h-screen relative overflow-auto scroll-smooth'>
       {/* Mobile-optimized viewport meta tag equivalent styling */}
       <style jsx>{`
 html, body {
@@ -424,7 +448,7 @@ html, body {
       <FloatingShopButton onClick={goToShop} />
 
       {/* Enhanced Mobile Controls Panel */}
-      <div className={`absolute bottom-[5%] left-4 right-4 z-10 ${isMobile ? 'block' : 'hidden'} lg:hidden`}>
+      {/* <div className={`absolute lg:bottom-[10%] sm:bottom-[15%] left-4 right-4 z-10 ${isMobile ? 'block' : 'hidden'} lg:hidden sm:hidden`}>
         <div className="bg-black sm:p-8 bg-opacity-90 backdrop-blur-sm text-white p-4 rounded-2xl border border-amber-600">
           <div className="grid grid-cols-3 gap-3 mb-3">
             <button 
@@ -446,20 +470,20 @@ html, body {
               onClick={handleBoatClick}
             >
               <span className="text-sm sm:text-4xl">🚢</span>
-              <span className="mobile-text text-sm  sm:text-4xl">Boat</span>
+              <span className="mobile-text text-sm sm:text-4xl">Boat</span>
             </button>
           </div>
           <div className="text-center text-xs opacity-75">
             <p className="mobile-text sm:text-xl">Drag to rotate • Tap to explore • Shop for treasures!</p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Enhanced Desktop Controls */}
-      <div className={`absolute bottom-[7%] left-4 z-10 max-w-md ${isMobile ? 'hidden' : 'block'}`}>
-        <div className="bg-black bg-opacity-80 text-white p-5 rounded-xl text-sm sm:text-xl backdrop-blur-sm border border-amber-600">
+      <div className={`absolute sm:bottom-[15%] lg:bottom-[20%] left-4 z-10 max-w-md opacity-50`}>
+        <div className="bg-black bg-opacity-80 text-white p-5 rounded-xl lg:text-sm sm:text-xl backdrop-blur-sm border border-amber-600">
   
-          <ul className="text-xs sm:text-2xl space-y-2 opacity-90 p-1">
+          <ul className="lg:text-xs sm:text-2xl space-y-2 opacity-90 p-1">
             <li className="flex items-center gap-2">
               <span>🖱️</span>
               Drag to navigate the seas
@@ -481,26 +505,26 @@ html, body {
       </div>
 
       {/* Enhanced Desktop Action Buttons */}
-      <div className={`absolute bottom-[7%] right-4 flex flex-col gap-3 ${isMobile ? 'hidden' : 'block'}`}>
+      <div className={`absolute sm:bottom-[15%] lg:bottom-[20%] right-4 flex flex-col gap-3 opacity-55 ${!isMobile ? 'hidden' : 'block'}`}>
         <a
           href="https://10zpwk-n0.myshopify.com/" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white px-6 py-4 rounded-xl text-sm font-bold shadow-lg transform hover:scale-105 active:scale-95 transition-all flex items-center gap-2 border-2 border-yellow-400 sm:text-4xl p-6"
+          className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white px-6 py-4 rounded-xl lg:text-sm font-bold shadow-lg transform hover:scale-105 active:scale-95 transition-all flex items-center gap-2 border-2 border-yellow-400 sm:text-4xl p-6"
         >
           <span>⚔️</span>
           VIKING SHOP
           <span>💰</span>
         </a>
         <button 
-          className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white px-4 py-3 rounded-xl text-sm font-semibold shadow-lg transform hover:scale-105 active:scale-95 transition-all flex items-center gap-2 sm:text-4xl p-6"
+          className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white px-4 py-3 rounded-xl lg:text-sm font-semibold shadow-lg transform hover:scale-105 active:scale-95 transition-all flex items-center gap-2 sm:text-4xl p-6"
           onClick={handleIslandClick}
         >
           <span>🏝️</span>
           Island
         </button>
         <button 
-          className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white px-4 py-3 rounded-xl text-sm font-semibold shadow-lg transform hover:scale-105 active:scale-95 transition-all flex items-center gap-2 sm:text-4xl p-6"
+          className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white px-4 py-3 rounded-xl lg:text-sm font-semibold shadow-lg transform hover:scale-105 active:scale-95 transition-all flex items-center gap-2 sm:text-4xl p-6"
           onClick={handleBoatClick}
         >
           <span>🚢</span>
